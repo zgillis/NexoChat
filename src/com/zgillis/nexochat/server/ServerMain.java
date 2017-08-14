@@ -1,12 +1,11 @@
 package com.zgillis.nexochat.server;
 
 public class ServerMain
-{
-	public static final double APP_VERSION = 0.1;
-	public static final String APP_RELEASE = "DEV";
+{	
 	public static void main(String[] args)
 	{
-		System.out.println("NexoChat Server - Version " + APP_VERSION + " " + APP_RELEASE + "\n");
+		System.out.println("NexoChat Server - Version " + Constants.APP_VERSION
+				+ " " + Constants.APP_RELEASE + "\n");
 		logLine("Creating a new chat server...");
 		ChatServer chatServer = new ChatServer(3086);
 		chatServer.start();
@@ -20,10 +19,10 @@ public class ServerMain
 	{
 		switch(log_type)
 		{
-		case ChatServer.LOG_MESSAGE:
+		case Constants.LOG_MESSAGE:
 			System.out.println("[Core] " + msg);
 			break;
-		case ChatServer.LOG_ERROR:
+		case Constants.LOG_ERROR:
 			System.err.println("[Core] " + msg);
 			break;
 		}
