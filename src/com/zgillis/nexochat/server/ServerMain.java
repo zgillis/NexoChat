@@ -7,7 +7,7 @@ public class ServerMain
 		System.out.println("NexoChat Server - Version " + Constants.APP_VERSION
 				+ " " + Constants.APP_RELEASE + "\n");
 		logLine("Creating a new chat server...");
-		ChatServer chatServer = new ChatServer(3086);
+		ChatServer chatServer = new ChatServer(Constants.SERVER_PORT);
 		chatServer.start();
 	}
 	
