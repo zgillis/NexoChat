@@ -1,4 +1,4 @@
-package com.zgillis.nexochat.server;
+package com.zgillis.nexochat;
 
 public class Constants
 {

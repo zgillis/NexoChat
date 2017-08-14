@@ -1,5 +1,7 @@
 package com.zgillis.nexochat.server;
 
+import com.zgillis.nexochat.*;
+
 public class ServerMain
 {	
 	public static void main(String[] args)
