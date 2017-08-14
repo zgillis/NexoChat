@@ -23,7 +23,9 @@ public class ChatClient extends Thread
 			in = new DataInputStream(clientSocket.getInputStream());
 			out = new DataOutputStream(clientSocket.getOutputStream());
 			logLine("Successfully connected to NC server.");
-			out.writeUTF("Hello there!");
+			
+			MessageSender msgSender = new MessageSender(out);
+			new Thread(msgSender).start();
 		}
 		catch(IOException e)
 		{
@@ -45,7 +47,7 @@ public class ChatClient extends Thread
 			{
 				logLine("You have been disconnected from the NC server.", Constants.LOG_ERROR);
 				logLine("Exiting NexoChat client...", Constants.LOG_ERROR);
-				break;
+				System.exit(0);
 			}
 		}
 	}

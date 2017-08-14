@@ -23,8 +23,9 @@ public class RemoteClient implements Runnable
 		{
 			try
 			{
-				System.out.println("Message: " + in.readUTF());
-				out.writeUTF("NexoChat Server says hello.\n");
+				String inMsg = in.readUTF();
+				System.out.println("Message: " + inMsg);
+				out.writeUTF("(Server) You said: " + inMsg);
 			}
 			catch (IOException e)
 			{
