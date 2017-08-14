@@ -4,13 +4,13 @@ import com.zgillis.nexochat.*;
 import java.io.*;
 import java.net.*;
 
-public class Client implements Runnable
+public class RemoteClient implements Runnable
 {
 	private Socket clientSocket;
 	private DataInputStream in;
 	private DataOutputStream out;
 	
-	public Client(Socket client_socket) throws IOException
+	public RemoteClient(Socket client_socket) throws IOException
 	{
 		clientSocket = client_socket;
 		in = new DataInputStream(clientSocket.getInputStream());

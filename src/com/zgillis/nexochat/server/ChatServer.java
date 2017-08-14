@@ -32,7 +32,7 @@ public class ChatServer extends Thread
 			{
 				Socket clientSocket = serverSocket.accept();
 				logLine("Client connected from " + clientSocket.getInetAddress());
-				new Thread(new Client(clientSocket)).start();
+				new Thread(new RemoteClient(clientSocket)).start();
 			}
 			catch (IOException e)
 			{
