@@ -15,8 +15,8 @@ public class ChatClient extends Thread
 	
 	public ChatClient(String hostname, int port)
 	{
-		logLine("Connecting to NC server on " + Constants.CLIENT_SERVER_HOST + ":"
-				+ Constants.CLIENT_SERVER_PORT + " ...");
+		logLine("Connecting to NC server on " + hostname + ":"
+				+ port + " ...");
 		try
 		{
 			clientSocket = new Socket(hostname, port);
