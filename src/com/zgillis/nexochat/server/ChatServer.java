@@ -12,7 +12,7 @@ public class ChatServer extends Thread
 	public ChatServer(int port)
 	{
 		portNumber = port;
-		logLine("Chat server starting on port " + port + "...");
+		logLine("Starting chat server...");
 		try
 		{
 			serverSocket = new ServerSocket(port);
@@ -21,6 +21,11 @@ public class ChatServer extends Thread
 		catch (IOException e)
 		{
 			logLine(e.getMessage(), Constants.LOG_ERROR);
+		}
+		catch (IllegalArgumentException e)
+		{
+			logLine(e.getMessage(), Constants.LOG_ERROR);
+			ServerMain.exit();
 		}
 	}
 	
@@ -36,8 +41,7 @@ public class ChatServer extends Thread
 			}
 			catch (IOException e)
 			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logLine(e.getMessage(), Constants.LOG_ERROR);
 			}
 		}
 	}
